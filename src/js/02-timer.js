@@ -31,7 +31,7 @@ const timer = {
         setInterval(() => {
             
             const deltaTime = startTime - currentTime;
-            const time = convertMs(deltaTime);
+            const {hours, mins, secs} = convertMs(deltaTime);
         }, 1000)
     }
 }
