@@ -15,8 +15,9 @@ const options = {
 
      if (selectedDates[0] < currentTime) {
         alert ('Please choose a date in the future');
+        btnStart.setAttribute('disabled', true);
      } else {
-        btnStart.removeAttribute('disabled', false);
+        btnStart.removeAttribute('disabled');
      }
      
     },
@@ -31,31 +32,13 @@ const timer = {
         setInterval(() => {
             
             const deltaTime = startTime - currentTime;
-            const {hours, mins, secs} = convertMs(deltaTime);
+            const time = convertMs(deltaTime);
+            
         }, 1000)
     }
 }
 
 timer.start();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function convertMs(ms) {
   
